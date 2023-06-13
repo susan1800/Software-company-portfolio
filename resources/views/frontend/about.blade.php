@@ -79,8 +79,8 @@
         {{-- start company icon --}}
         <div class="brands">
             <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="position-relative d-inline text-primary ps-4">Trusted Over</h6>
-                <h2 class="title">Trusted Over {{$companyiconcount}}+ Companies</h2>
+                <h6 class="position-relative d-inline text-primary ps-4">Trusted Over {{$companyiconcount}}+ Companies</h6>
+
             </div>
             <div class="section-small text-center wow pixFadeUp">
 
@@ -88,7 +88,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="brands_slider_container">
+                        <div class="">
                             <div class="owl-carousel owl-theme brands_slider">
                                 @foreach($companyicons as $companyicon)
                                 <div class="owl-item">
@@ -253,39 +253,7 @@
                         </div>
                     </div>
                     @endforeach
-                    {{-- <div class="testimonial-item bg-transparent border rounded text-white p-4">
-                        <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('frontend/img/testimonial-2.jpg')}}" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h6 class="text-white mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
-                        <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('frontend/img/testimonial-3.jpg')}}" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h6 class="text-white mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
-                        <i class="fa fa-quote-left fa-2x mb-3"></i>
-                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('frontend/img/testimonial-4.jpg')}}" style="width: 50px; height: 50px;">
-                            <div class="ps-3">
-                                <h6 class="text-white mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                    </div> --}}
+
                 </div>
             </div>
         </div>

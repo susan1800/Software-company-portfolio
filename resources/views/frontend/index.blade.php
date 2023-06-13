@@ -76,8 +76,8 @@
         {{-- start company icon --}}
         <div class="brands">
             <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="position-relative d-inline text-primary ps-4">Trusted Over</h6>
-                <h2 class="title">Trusted Over {{$companyiconcount}}+ Companies</h2>
+                <h6 class="position-relative d-inline text-primary ps-4">Trusted Over {{$companyiconcount}}+ Companies</h6>
+
             </div>
             <div class="section-small text-center wow pixFadeUp">
 
@@ -85,7 +85,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="brands_slider_container">
+                        <div class="">
                             <div class="owl-carousel owl-theme brands_slider">
                                 @foreach($companyicons as $companyicon)
                                 <div class="owl-item">
@@ -334,63 +334,7 @@
 
                 </div>
 
-                {{-- <div class="row">
-                  <div class="col-lg-4 col-md-12 mb-4">
-                    <div class="card">
-                      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img src="https://mdbootstrap.com/img/new/standard/nature/002.jpg" class="img-fluid" />
-                        <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Post title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and make up the bulk of the
-                          card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Read</a>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img src="https://mdbootstrap.com/img/new/standard/nature/022.jpg" class="img-fluid" />
-                        <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Post title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and make up the bulk of the
-                          card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Read</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img src="https://mdbootstrap.com/img/new/standard/nature/035.jpg" class="img-fluid" />
-                        <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </a>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Post title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and make up the bulk of the
-                          card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Read</a>
-                      </div>
-                    </div>
-                  </div> --}}
                 </div>
               </section>
               <!--Section: Content-->
