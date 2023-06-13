@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{asset('frontend/img/about.jpg')}}">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{asset('storage/'.$about->image)}}">
                     </div>
                 </div>
             </div>

@@ -29,7 +29,7 @@
         <div class="container-xxl py-5">
             <div class="container px-lg-5">
                 <div class="row g-5">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="section-title position-relative mb-4 pb-2">
                             <h6 class="position-relative text-primary ps-4">About Us</h6>
                             <h2 class="mt-2">{{$about->title}}</h2>
@@ -66,7 +66,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{{asset('storage/'.$about->image)}}">
                     </div>
                 </div>
