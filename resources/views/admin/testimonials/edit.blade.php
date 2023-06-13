@@ -28,20 +28,6 @@
                             @error('title') {{ $message }} @enderror
                         </div>
 
-                        {{-- <div class="form-group">
-                            <label class="control-label" for="details">details <span class="m-l-5 text-danger"> *</span></label>
-                            <input class="form-control @error('details') is-invalid @enderror" type="text" name="details" id="details" value="{{ old('details', $targettestimonial->details) }}"/>
-                            @error('details') {{ $message }} @enderror
-                        </div> --}}
-                        <div class="form-group">
-                            <label class="control-label" for="bio">Details</label>
-                            <textarea class="ckeditor form-control @error('details') is-invalid @enderror " rows="4" name="details" id="details">{{ old('details') }}</textarea>
-                            @error('details') {{ $message }} @enderror
-                        </div>
-
-
-
-
 
                         <div class="form-group">
                             <label class="control-label" for="details">Details</label>
