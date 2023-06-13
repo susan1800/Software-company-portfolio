@@ -20,7 +20,6 @@
                             <th> Title </th>
                             <th> Details </th>
                             <th>icon</th>
-                            <th>status</th>
                             <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>
                         </thead>
@@ -32,11 +31,11 @@
                                     <td>{{ $service->title }}</td>
                                     <td>{{ $service->details }}</td>
                                     <td><img src="{{asset('storage/'.$service->icon)}}" width="auto" height="100" alt="{{$service->icon}}"></td>
-                                    <td>{{ $service->status }}</td>
+
                                     <td class="text-center">
                                         <div class="btn-group" role="group" aria-label="Second group">
-                                            <a href="{{ route('admin.services.edit', $service->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                                            <a href="{{ route('admin.services.delete', $service->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                            <a href="{{ route('admin.services.edit', $service->id) }}" class="btn btn-sm btn-primary" style="margin:3px;"><i class="fa fa-edit"></i></a>
+                                            <a href="{{ route('admin.services.delete', $service->id) }}" class="btn btn-sm @if($service->status == '1') btn-primary @else btn-danger @endif " style="margin:3px;"><i class="fa fa-eye"></i></a>
                                         </div>
                                     </td>
                                 </tr>

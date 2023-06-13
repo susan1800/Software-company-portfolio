@@ -12,18 +12,16 @@
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
-                <div class="tile-body">
-                    <table class="table table-hover table-bordered" id="sampleTable">
+                <div class="tile-body table-responsive">
+                    <table class="table table-hover table-bordered " id="sampleTable">
                         <thead>
                         <tr>
                             <th> # </th>
                             <th> Name </th>
                             <th> title </th>
-                            <th> fb </th>
-                            <th> LinkedIn </th>
-                            <th> github </th>
+                            <th> Social link </th>
+
                             <th> image </th>
-                            <th>status</th>
                             <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>
                         </thead>
@@ -34,15 +32,14 @@
                                     <td>{{ $team->id }}</td>
                                     <td>{{ $team->name }}</td>
                                     <td>{{ $team->title }}</td>
-                                    <td>{{ $team->facebook }}</td>
-                                    <td>{{ $team->linkedin }}</td>
-                                    <td>{{ $team->github }}</td>
+                                    <td><a href="{{$team->facebook}}" style="padding:5px;"> <i class="fa fa-facebook" ></i></a> <a href="{{$team->linkedin}}" style="padding:5px;"><i class="fa fa-linkedin" ></i></a><a href="{{$team->github}}" style="padding:5px;"> <i class="fa fa-github"></i></a></td>
+
                                     <td><img src="{{asset('storage/'.$team->image) }}" height="100" width="auto"></td>
-                                    <td>{{ $team->status }}</td>
+
                                     <td class="text-center">
                                         <div class="btn-group" role="group" aria-label="Second group">
-                                            <a href="{{ route('admin.team.edit', $team->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                                            <a href="{{ route('admin.team.delete', $team->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                            <a href="{{ route('admin.team.edit', $team->id) }}" class="btn btn-sm btn-primary" style="margin:3px;"><i class="fa fa-edit"></i></a>
+                                            <a href="{{ route('admin.team.delete', $team->id) }}" class="btn btn-sm @if($team->status == '1') btn-primary @else btn-danger @endif" style="margin:3px;"><i class="fa fa-eye"></i></a>
                                         </div>
                                     </td>
                                 </tr>

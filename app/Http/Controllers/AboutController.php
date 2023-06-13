@@ -31,6 +31,9 @@ class AboutController extends BaseController
         $services = Service::where('status','=' ,'1')->get();
         $testimonials = Testimonial::where('status','=' ,'1')->get();
         $teams = Team::where('status','=' ,'1')->get();
-        return view('frontend.about', compact('about','setting','services','testimonials' , 'teams' , 'footerprojects'));
+        $companyicons =CompanyIcon::where('status','=' ,'1')->get();
+        $companyiconcount =CompanyIcon::where('status','=','1')->count();
+        $companyfacts =CompanyFact::where('status','=' ,'1')->get();
+        return view('frontend.about', compact('companyicons', 'companyfacts', 'companyiconcount', 'about','setting','services','testimonials' , 'teams' , 'footerprojects'));
     }
 }

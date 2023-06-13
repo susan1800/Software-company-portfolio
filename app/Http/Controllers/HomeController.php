@@ -31,10 +31,14 @@ class HomeController extends Controller
         $testimonials =Testimonial::where('status','=' ,'1')->get();
         $footerprojects = Portfolio::where('status','=' ,'1')->latest()->limit(6)->get();
 
+        $companyicons =CompanyIcon::where('status','=' ,'1')->get();
+        $companyiconcount =CompanyIcon::where('status','=','1')->count();
+        $companyfacts =CompanyFact::where('status','=' ,'1')->get();
+
         $home=Home::where('status','=' ,'1')->latest()->first();
 
 
 
-        return view('frontend.index', compact(['services','teams', 'blogs' , 'testimonials' , 'about','home' , 'portfolios' , 'categories' , 'footerprojects','setting']));
+        return view('frontend.index', compact(['companyiconcount','companyfacts', 'companyicons','services','teams', 'blogs' , 'testimonials' , 'about','home' , 'portfolios' , 'categories' , 'footerprojects','setting']));
     }
 }

@@ -82,12 +82,12 @@
                 <span class="app-menu__label">user</span>
             </a>
         </li> --}}
-        {{-- <li>
+        <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.companyicons.index' ? 'active' : '' }}" href="{{ route('admin.companyicons.index') }}">
                 <i class="app-menu__icon fa fa-book"></i>
                 <span class="app-menu__label">CompanyIcon</span>
             </a>
-        </li> --}}
+        </li>
         {{-- <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.companyfacts.index' ? 'active' : '' }}" href="{{ route('admin.companyfacts.index') }}">
                 <i class="app-menu__icon fa fa-book"></i>

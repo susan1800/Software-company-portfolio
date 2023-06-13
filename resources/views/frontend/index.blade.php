@@ -72,6 +72,37 @@
         <!-- About End -->
 
 
+
+        {{-- start company icon --}}
+        <div class="brands">
+            <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="position-relative d-inline text-primary ps-4">Trusted Over</h6>
+                <h2 class="title">Trusted Over {{$companyiconcount}}+ Companies</h2>
+            </div>
+            <div class="section-small text-center wow pixFadeUp">
+
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="brands_slider_container">
+                            <div class="owl-carousel owl-theme brands_slider">
+                                @foreach($companyicons as $companyicon)
+                                <div class="owl-item">
+                                    <div class="brands_item d-flex flex-column justify-content-center">
+                                        <img src="{{asset('storage/'.$companyicon->icon)}}" alt="" style="height:80px;">
+                                    </div>
+                                </div>
+                                @endforeach
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Newsletter Start -->
         <div class="container-xxl bg-primary newsletter my-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container px-lg-5">
@@ -265,6 +296,7 @@
     </div>
     {{--  team end --}}
 
+
         <section class="my-5">
             <div class="container">
               <!--Section: Content-->
@@ -387,6 +419,48 @@
 
     <!-- JavaScript Libraries -->
    @include('frontend.partials.script')
+
+   <script>
+    $(document).ready(function(){
+
+if($('.brands_slider').length)
+{
+ var brandsSlider = $('.brands_slider');
+
+ brandsSlider.owlCarousel(
+ {
+     loop:true,
+     autoplay:true,
+     autoplayTimeout:5000,
+     nav:false,
+     dots:false,
+     autoWidth:true,
+     items:8,
+     margin:42
+ });
+
+ if($('.brands_prev').length)
+ {
+     var prev = $('.brands_prev');
+     prev.on('click', function()
+     {
+         brandsSlider.trigger('prev.owl.carousel');
+     });
+ }
+
+ if($('.brands_next').length)
+ {
+     var next = $('.brands_next');
+     next.on('click', function()
+     {
+         brandsSlider.trigger('next.owl.carousel');
+     });
+ }
+}
+
+
+});
+</script>
 </body>
 
 </html>
