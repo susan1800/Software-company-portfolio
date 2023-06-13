@@ -1,0 +1,67 @@
+[17-Feb-2022 17:17:55 UTC] PHP Warning:  require(/home/notemand/tests/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/notemand/tests/public/index.php on line 24
+[17-Feb-2022 17:17:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notemand/tests/public/../vendor/autoload.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/notemand/tests/public/index.php:24
+Stack trace:
+#0 /home/notemand/tests/server.php(21): require_once()
+#1 {main}
+  thrown in /home/notemand/tests/public/index.php on line 24
+[17-Feb-2022 17:18:00 UTC] PHP Warning:  require(/home/notemand/tests/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/notemand/tests/public/index.php on line 24
+[17-Feb-2022 17:18:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notemand/tests/public/../vendor/autoload.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/notemand/tests/public/index.php:24
+Stack trace:
+#0 /home/notemand/tests/server.php(21): require_once()
+#1 {main}
+  thrown in /home/notemand/tests/public/index.php on line 24
+[17-Feb-2022 17:25:40 UTC] PHP Fatal error:  Trait "App\Traits\FlashMessages" not found in /home/notemand/tests/app/Http/Controllers/BaseController.php on line 8
+[17-Feb-2022 17:29:28 UTC] PHP Fatal error:  Trait "App\Traits\UploadAble" not found in /home/notemand/tests/app/Http/Controllers/Admin/SettingController.php on line 11
+[17-Feb-2022 17:30:04 UTC] PHP Fatal error:  Trait "App\traits\UploadAble" not found in /home/notemand/tests/app/Http/Controllers/Admin/SettingController.php on line 11
+[17-Feb-2022 17:30:36 UTC] PHP Fatal error:  Trait "App\traits\UploadAble" not found in /home/notemand/tests/app/Http/Controllers/Admin/SettingController.php on line 11
+[17-Feb-2022 17:39:31 UTC] PHP Fatal error:  Trait "App\traits\FlashMessages" not found in /home/notemand/tests/app/Http/Controllers/BaseController.php on line 8
+[17-Feb-2022 17:39:47 UTC] PHP Fatal error:  Trait "App\traits\FlashMessages" not found in /home/notemand/tests/app/Http/Controllers/BaseController.php on line 8
+[17-Feb-2022 17:40:08 UTC] PHP Fatal error:  Trait "App\Traits\UploadAble" not found in /home/notemand/tests/app/Http/Controllers/Admin/SettingController.php on line 11
+[19-Jul-2022 09:10:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_oci.so' (tried: /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so (libclntsh.so.12.1: cannot open shared object file: No such file or directory), /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so (/opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[19-Jul-2022 09:11:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_oci.so' (tried: /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so (libclntsh.so.12.1: cannot open shared object file: No such file or directory), /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so (/opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[19-Jul-2022 09:29:04 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_oci.so' (tried: /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so (libclntsh.so.12.1: cannot open shared object file: No such file or directory), /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so (/opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[19-Jul-2022 09:29:15 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_oci.so' (tried: /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so (libclntsh.so.12.1: cannot open shared object file: No such file or directory), /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so (/opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[19-Jul-2022 16:44:55 UTC] PHP Warning:  require(/home/notemand/tests/public/vendor/autoload.php): Failed to open stream: No such file or directory in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:44:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notemand/tests/public/vendor/autoload.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/notemand/tests/public/index.php:24
+Stack trace:
+#0 /home/notemand/tests/server.php(21): require_once()
+#1 {main}
+  thrown in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:44:58 UTC] PHP Warning:  require(/home/notemand/tests/public/vendor/autoload.php): Failed to open stream: No such file or directory in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:44:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notemand/tests/public/vendor/autoload.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/notemand/tests/public/index.php:24
+Stack trace:
+#0 /home/notemand/tests/server.php(21): require_once()
+#1 {main}
+  thrown in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:45:28 UTC] PHP Warning:  require(/home/notemand/tests/public/vendor/autoload.php): Failed to open stream: No such file or directory in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:45:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notemand/tests/public/vendor/autoload.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/notemand/tests/public/index.php:24
+Stack trace:
+#0 /home/notemand/tests/server.php(21): require_once()
+#1 {main}
+  thrown in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:45:55 UTC] PHP Warning:  require(/home/notemand/tests/public/vendor/autoload.php): Failed to open stream: No such file or directory in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:45:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notemand/tests/public/vendor/autoload.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/notemand/tests/public/index.php:24
+Stack trace:
+#0 /home/notemand/tests/server.php(21): require_once()
+#1 {main}
+  thrown in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:46:01 UTC] PHP Warning:  require(/home/notemand/tests/public/vendor/autoload.php): Failed to open stream: No such file or directory in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:46:01 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notemand/tests/public/vendor/autoload.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/notemand/tests/public/index.php:24
+Stack trace:
+#0 /home/notemand/tests/server.php(21): require_once()
+#1 {main}
+  thrown in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:46:03 UTC] PHP Warning:  require(/home/notemand/tests/public/vendor/autoload.php): Failed to open stream: No such file or directory in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:46:03 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notemand/tests/public/vendor/autoload.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/notemand/tests/public/index.php:24
+Stack trace:
+#0 /home/notemand/tests/server.php(21): require_once()
+#1 {main}
+  thrown in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:47:38 UTC] PHP Warning:  require(/home/notemand/tests/public/vendor/autoload.php): Failed to open stream: No such file or directory in /home/notemand/tests/public/index.php on line 24
+[19-Jul-2022 16:47:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notemand/tests/public/vendor/autoload.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/notemand/tests/public/index.php:24
+Stack trace:
+#0 /home/notemand/tests/server.php(21): require_once()
+#1 {main}
+  thrown in /home/notemand/tests/public/index.php on line 24
+[20-Jul-2022 08:06:00 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_oci.so' (tried: /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so (libclntsh.so.12.1: cannot open shared object file: No such file or directory), /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so (/opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[20-Jul-2022 08:06:31 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_oci.so' (tried: /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so (libclntsh.so.12.1: cannot open shared object file: No such file or directory), /opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so (/opt/alt/php80/usr/lib64/php/modules/pdo_oci.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
