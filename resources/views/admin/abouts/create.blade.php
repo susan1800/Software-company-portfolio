@@ -50,9 +50,9 @@
                             @error('github') {{ $message }} @enderror
                         </div>
                         <div class="form-group">
-                           
+
                             <input class="form-control " type="hidden" name="status" id="status" value="1"/>
-                           
+
                         </div>
                         <div class="form-group">
                             <label class="control-label">Image</label>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="tile-footer">
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Save About</button>
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Create About</button>
                         &nbsp;&nbsp;&nbsp;
                         <a class="btn btn-secondary" href="{{ route('admin.abouts.index') }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
                     </div>

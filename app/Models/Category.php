@@ -8,15 +8,15 @@ use Illuminate\Support\Str;
 use HasFactory;
 class Category extends Model
 {
-   
+
     protected $table = 'categories';
 
     protected $fillable = [
-        'title', 'subtitle', 'status',
+        'title', 'subtitle','slug','cat', 'status',
     ];
 
 
-  
+
     public function blogs()
     {
         return $this->hasMany(Blog::class);

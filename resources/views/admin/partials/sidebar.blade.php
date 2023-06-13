@@ -67,7 +67,7 @@
         <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.portfolio.index' ? 'active' : '' }}" href="{{ route('admin.portfolio.index') }}">
                 <i class="app-menu__icon fa fa-rss"></i>
-                <span class="app-menu__label">Project</span>
+                <span class="app-menu__label">Portfolio</span>
             </a>
         </li>
         <li>

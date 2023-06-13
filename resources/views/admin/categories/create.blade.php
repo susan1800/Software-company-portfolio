@@ -19,11 +19,15 @@
                             <input class="form-control @error('title') is-invalid @enderror" type="text" name="title" id="title" value="{{ old('ttlei') }}"/>
                             @error('title') {{ $message }} @enderror
                         </div>
-                        {{-- <div class="form-group">
-                            <label class="control-label" for="subtitle">Subtitle <span class="m-l-5 text-danger"> *</span></label>
-                            <input class="form-control @error('subtitle') is-invalid @enderror" type="text" name="subtitle" id="subtitle" value="{{ old('ttlei') }}"/>
-                            @error('subtitle') {{ $message }} @enderror
-                        </div> --}}
+                        <div class="form-group">
+                            <label class="control-label" for="title">Select <span class="m-l-5 text-danger"> *</span></label>
+                            <select class="form-control @error('title') is-invalid @enderror" name="cat">
+                                <option value="project">Project category</option>
+                                <option value="blog">Blog Category</option>
+                            </select>
+                        </div>
+
+
 
                         <div class="form-group">
 

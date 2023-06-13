@@ -25,11 +25,7 @@
                             <input class="form-control " type="hidden" name="status" id="status" value="1"/>
                             @error('title') {{ $message }} @enderror
                         </div>
-                        {{-- <div class="form-group">
-                            <label class="control-label" for="bio">Details</label>
-                            <textarea class="ckeditor form-control @error('details') is-invalid @enderror " rows="4" name="details" id="details">{{ old('details') }}</textarea>
-                            @error('details') {{ $message }} @enderror
-                        </div> --}}
+
                         <div class="form-group">
                             <label class="control-label" for="link">link <span class="m-l-5 text-danger"> *</span></label>
                             <input class="form-control @error('link') is-invalid @enderror" type="text" name="link" id="link" value="{{ old('link') }}"/>
@@ -40,7 +36,7 @@
                         <div class="form-group">
                             <label for="cat_id">Category <span class="m-l-5 text-danger"> *</span></label>
                             <select id=cat_id class="form-control custom-select mt-15 @error('cat_id') is-invalid @enderror" name="cat_id">
-                                <option value="0">Select a category</option>
+                                <option value="">Select a category</option>
                                 @foreach($categories as $category)
                                 @if(($category->status==1))
                                     <option value="{{ $category->id }}"> {{ $category->title }} </option>

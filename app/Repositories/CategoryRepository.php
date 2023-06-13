@@ -15,6 +15,7 @@ use App\Contracts\CategoryContract;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Doctrine\Instantiator\Exception\InvalidArgumentException;
+use Illuminate\Support\Str;
 
 /**
  * Class CategoryRepository
@@ -69,13 +70,38 @@ class CategoryRepository extends BaseRepository implements CategoryContract
      */
     public function createCategory(array $params)
     {
+
         try {
             $collection = collect($params);
+            $splits = explode($collection['title'],' ');
+            $createslug ='';
 
-            
+            foreach($splits as $split){
+                $createslug = $createslug.$split;
+            }
+            if($createslug == " "){
+                $createslug = $collection['title'];
+            }
+
+            $find = Category::where('slug',$createslug)->first();
+            if($find){
+                $slug = $createslug.Str::random(5);
+            }else{
+                $slug = $createslug;
+            }
+            $collection['slug'] = $slug;
+
+
+
+
+
+
 
             $category = new Category($collection->all());
 
+
+
+// dd($category);
             $category->save();
 
             return $category;
@@ -104,10 +130,28 @@ class CategoryRepository extends BaseRepository implements CategoryContract
      * @param $id
      * @return bool
      */
+    public function disableCategory($id)
+    {
+
+
+        $category = $this->findCategoryById($id);
+        if($category['status'] == '1'){
+            $category['status'] = '0';
+        }else{
+            $category['status'] = '1';
+        }
+
+
+
+        $category->save();
+
+        return $category;
+    }
+
     public function deleteCategory($id)
     {
-        
-        
+
+
         $category = $this->findCategoryById($id);
 
         $category['status'] = '0';

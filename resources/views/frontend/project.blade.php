@@ -39,7 +39,7 @@
                         <ul class="list-inline mb-5" id="portfolio-flters">
                             <li class="btn px-3 pe-4 active" data-filter="*">All</li>
                             @foreach($categories as $category)
-                            <li class="btn px-3 pe-4" data-filter=".{{$category->title}}">{{$category->title}}</li>
+                            <li class="btn px-3 pe-4" data-filter=".{{$category->slug}}">{{$category->title}}</li>
                             @endforeach
                             {{-- <li class="btn px-3 pe-4" data-filter=".second">Development</li> --}}
                         </ul>
@@ -49,7 +49,7 @@
                     @foreach ($portfolios as $portfolio)
 
 
-                    <div class="col-lg-4 col-md-6 portfolio-item {{$portfolio->category->title}} wow zoomIn" data-wow-delay="0.1s">
+                    <div class="col-lg-4 col-md-6 portfolio-item {{$portfolio->category->slug}} wow zoomIn" data-wow-delay="0.1s">
                         <div class="position-relative rounded overflow-hidden">
                             <img class="img-fluid w-100" src="{{asset('storage/'.$portfolio->image)}}" style="height: 350px !important;" alt="">
                             <div class="portfolio-overlay">
@@ -62,67 +62,7 @@
                         </div>
                     </div>
                     @endforeach
-                    {{-- <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.3s">
-                        <div class="position-relative rounded overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('frontend/img/portfolio-2.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="{{asset('frontend/img/portfolio-2.jpg')}}" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                                <div class="mt-auto">
-                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.6s">
-                        <div class="position-relative rounded overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('frontend/img/portfolio-3.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="{{asset('frontend/img/portfolio-3.jpg')}}" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                                <div class="mt-auto">
-                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.1s">
-                        <div class="position-relative rounded overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('frontend/img/portfolio-4.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="{{asset('frontend/img/portfolio-4.jpg')}}" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                                <div class="mt-auto">
-                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.3s">
-                        <div class="position-relative rounded overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('frontend/img/portfolio-5.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="{{asset('frontend/img/portfolio-5.jpg')}}" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                                <div class="mt-auto">
-                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.6s">
-                        <div class="position-relative rounded overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('frontend/img/portfolio-6.jpg')}}" alt="">
-                            <div class="portfolio-overlay">
-                                <a class="btn btn-light" href="{{asset('frontend/img/portfolio-6.jpg')}}" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                                <a class="btn btn-light" href="{{asset('frontend/img/portfolio-6.jpg')}}" style="padding: 10px; "><i class="fa fa-plus fa-2x text-primary"></i></a>
-                                <div class="mt-auto">
-                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
+
                 </div>
             </div>
         </div>

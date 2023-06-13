@@ -108,6 +108,16 @@ class CategoryController extends BaseController
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
+    public function disable($id)
+    {
+        $category = $this->categoryRepository->disableCategory($id);
+
+        if (!$category) {
+            return $this->responseRedirectBack('Error occurred while deleting category.', 'error', true, true);
+        }
+        return $this->responseRedirect('admin.categories.index', 'Category deleted successfully' ,'success',false, false);
+    }
+
     public function delete($id)
     {
         $category = $this->categoryRepository->deleteCategory($id);
