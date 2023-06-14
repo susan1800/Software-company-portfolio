@@ -278,11 +278,11 @@ if($('.brands_slider').length)
  {
      loop:true,
      autoplay:true,
-     autoplayTimeout:5000,
+     autoplayTimeout:3000,
      nav:false,
      dots:false,
      autoWidth:true,
-     items:8,
+     items:10,
      margin:42
  });
 

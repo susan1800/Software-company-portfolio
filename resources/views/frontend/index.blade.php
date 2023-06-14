@@ -7,7 +7,7 @@
                     <div class="row g-5 py-5">
                         <div class="col-lg-8 text-center text-lg-start">
                             <h1 class="text-white mb-4 animated zoomIn">{!!$home->title!!}</h1>
-                            <p class="text-white pb-3 animated zoomIn">{!!$home->details!!}</p>
+                            <p class="text-white mb-4 animated zoomIn" style="color:white !important;">{!!$home->details!!}</p>
                             {{-- <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Free Quote</a> --}}
                             <a href="{{route('contact')}}" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
                         </div>
@@ -375,11 +375,11 @@ if($('.brands_slider').length)
  {
      loop:true,
      autoplay:true,
-     autoplayTimeout:5000,
+     autoplayTimeout:3000,
      nav:false,
      dots:false,
      autoWidth:true,
-     items:8,
+     items:10,
      margin:42
  });
 
