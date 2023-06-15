@@ -32,7 +32,7 @@ class ScreenController extends BaseController
         $this->setPageTitle('Screen', 'Screen');
         return view('admin.screens.index', compact('screens'));
     }
- 
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -54,11 +54,11 @@ class ScreenController extends BaseController
         $this->validate($request, [
             'title'      =>  'required',
             'image' =>  'mimes:jpg,jpeg,png|max:2000',
-            
+
         ]);
 
         $params = $request->except('_token');
-       
+
         $screen = $this->screenRepository->createScreen($params);
 
         if (!$screen) {
@@ -87,12 +87,12 @@ class ScreenController extends BaseController
      */
     public function update(Request $request)
     {
-       
+
         $this->validate($request, [
             'title'      =>  'required|max:191',
-           
+
             'image'     =>  'mimes:jpg,jpeg,png|max:2000',
-           
+
         ]);
 
         $params = $request->except('_token');
@@ -103,7 +103,7 @@ class ScreenController extends BaseController
             return $this->responseRedirectBack('Error occurred while updating Screen.', 'error', true, true);
         }
         return $this->responseRedirectBack('Screen updated successfully' ,'success',false, false);
-  
+
     }
 
     /**
@@ -115,8 +115,8 @@ class ScreenController extends BaseController
         $screen = $this->screenRepository->deleteScreen($id);
 
         if (!$screen) {
-            return $this->responseRedirectBack('Error occurred while deleting Screen.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating Screen.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.screens.index', 'Screen deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.screens.index', 'Screen updated successfully' ,'success',false, false);
     }
 }

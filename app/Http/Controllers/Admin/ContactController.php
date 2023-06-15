@@ -61,7 +61,7 @@ class ContactController extends BaseController
             'long'     =>   'required',
             'status'   =>  'required',
         ]);
- 
+
         $params = $request->except('_token');
 
         $about = $this->contactRepository->createContact($params);
@@ -121,8 +121,8 @@ class ContactController extends BaseController
         $contact = $this->contactRepository->deleteContact($id);
 
         if (!$contact) {
-            return $this->responseRedirectBack('Error occurred while deleting contacts.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating contacts.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.contacts.index', 'Contact deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.contacts.index', 'Contact updated successfully' ,'success',false, false);
     }
 }

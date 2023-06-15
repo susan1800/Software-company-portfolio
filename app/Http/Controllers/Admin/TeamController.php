@@ -119,8 +119,8 @@ class TeamController extends BaseController
         $team = $this->teamRepository->deleteTeam($id);
 
         if (!$team) {
-            return $this->responseRedirectBack('Error occurred while deleting team.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating team.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.team.index', 'Team deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.team.index', 'Team updated successfully' ,'success',false, false);
     }
 }

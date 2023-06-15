@@ -123,8 +123,8 @@ class CategoryController extends BaseController
         $category = $this->categoryRepository->deleteCategory($id);
 
         if (!$category) {
-            return $this->responseRedirectBack('Error occurred while deleting category.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating category.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.categories.index', 'Category deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.categories.index', 'Category updated successfully' ,'success',false, false);
     }
 }

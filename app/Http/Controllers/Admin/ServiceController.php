@@ -97,7 +97,7 @@ class ServiceController extends BaseController
         ]);
 
         $params = $request->except('_token');
-      
+
         $service = $this->serviceRepository->updateService($params);
 
         if (!$service) {
@@ -115,8 +115,8 @@ class ServiceController extends BaseController
         $service = $this->serviceRepository->deleteService($id);
 
         if (!$service) {
-            return $this->responseRedirectBack('Error occurred while deleting service.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating service.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.services.index', 'Service deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.services.index', 'Service updated successfully' ,'success',false, false);
     }
 }

@@ -129,9 +129,9 @@ class AboutController extends BaseController
         $about = $this->aboutRepository->deleteAbout($id);
 
         if (!$about) {
-            return $this->responseRedirectBack('Error occurred while deleting about.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while update about.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.abouts.index', 'About deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.abouts.index', 'About updated successfully' ,'success',false, false);
     }
 
 }

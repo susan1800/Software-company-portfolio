@@ -93,7 +93,7 @@ class SubscriptionController extends BaseController
             'title'      =>  'required|max:191',
             'price' =>  'numeric:min:1',
             'plan' => 'required|max:100',
-           
+
         ]);
 
         $params = $request->except('_token');
@@ -115,8 +115,8 @@ class SubscriptionController extends BaseController
         $subscription = $this->subscriptionRepository->deleteSubscription($id);
 
         if (!$subscription) {
-            return $this->responseRedirectBack('Error occurred while deleting Subscription.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating Subscription.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.subscription.index', 'Subscription deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.subscription.index', 'Subscription updated successfully' ,'success',false, false);
     }
 }

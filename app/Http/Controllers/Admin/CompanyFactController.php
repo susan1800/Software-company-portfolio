@@ -44,7 +44,7 @@ class CompanyFactController extends BaseController
 
         $this->setPageTitle('companyFact Us', 'Create companyFact');
         return view('admin.companyfacts.create', compact('companyFacts' , 'categories'));
-    } 
+    }
 
     /**
      * @param Request $request
@@ -115,8 +115,8 @@ class CompanyFactController extends BaseController
         $companyFact = $this->companyFactRepository->deletecompanyFact($id);
 
         if (!$companyFact) {
-            return $this->responseRedirectBack('Error occurred while deleting companyFact.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating companyFact.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.companyfacts.index', 'companyFact deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.companyfacts.index', 'companyFact updated successfully' ,'success',false, false);
     }
 }

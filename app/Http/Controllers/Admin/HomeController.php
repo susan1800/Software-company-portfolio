@@ -115,8 +115,8 @@ class HomeController extends BaseController
         $home = $this->homeRepository->deleteHome($id);
 
         if (!$home) {
-            return $this->responseRedirectBack('Error occurred while deleting Home.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating Home.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.homes.index', 'Home deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.homes.index', 'Home updated successfully' ,'success',false, false);
     }
 }

@@ -50,7 +50,7 @@ class CompanyIconController extends BaseController
     {
         $this->validate($request, [
             'title'      =>  'required|max:191',
-            
+
             'icon'     =>  'mimes:jpg,jpeg,png|max:2000'
         ]);
 
@@ -109,8 +109,8 @@ class CompanyIconController extends BaseController
         $companyIcon = $this->companyIconRepository->deletecompanyIcon($id);
 
         if (!$companyIcon) {
-            return $this->responseRedirectBack('Error occurred while deleting companyIcon.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating companyIcon.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.companyicons.index', 'companyIcon deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.companyicons.index', 'companyIcon updated successfully' ,'success',false, false);
     }
 }

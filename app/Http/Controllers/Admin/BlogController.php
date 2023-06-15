@@ -127,9 +127,9 @@ class BlogController extends BaseController
         $blog = $this->blogRepository->deleteBlog($id);
 
         if (!$blog) {
-            return $this->responseRedirectBack('Error occurred while deleting blog.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating blog.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.blogs.index', 'Blog deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.blogs.index', 'Blog updated successfully' ,'success',false, false);
     }
 
 }

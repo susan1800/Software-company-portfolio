@@ -125,9 +125,9 @@ class PortfolioController extends BaseController
         $portfolio = $this->portfolioRepository->deletePortfolio($id);
 
         if (!$portfolio) {
-            return $this->responseRedirectBack('Error occurred while deleting portfolio.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating portfolio.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.portfolio.index', 'portfolio deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.portfolio.index', 'portfolio updated successfully' ,'success',false, false);
     }
 
 }

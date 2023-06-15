@@ -32,7 +32,7 @@ class GeneralInformationController extends BaseController
         $this->setPageTitle('GeneralInformation', 'GeneralInformation');
         return view('admin.generalinformations.index', compact('generalInformations'));
     }
- 
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -59,7 +59,7 @@ class GeneralInformationController extends BaseController
         ]);
 
         $params = $request->except('_token');
-       
+
         $generalInformation = $this->GeneralInformationRepository->createGeneralInformation($params);
 
         if (!$generalInformation) {
@@ -88,13 +88,13 @@ class GeneralInformationController extends BaseController
      */
     public function update(Request $request)
     {
-       
+
         $this->validate($request, [
             'title'      =>  'required|max:191',
             'details'      =>  'required',
             'subtitle' =>  'required|max:191',
             'image'     =>  'mimes:jpg,jpeg,png|max:2000',
-           
+
         ]);
 
         $params = $request->except('_token');
@@ -105,7 +105,7 @@ class GeneralInformationController extends BaseController
             return $this->responseRedirectBack('Error occurred while updating GeneralInformation.', 'error', true, true);
         }
         return $this->responseRedirectBack('GeneralInformation updated successfully' ,'success',false, false);
-  
+
     }
 
     /**
@@ -117,8 +117,8 @@ class GeneralInformationController extends BaseController
         $generalInformation = $this->GeneralInformationRepository->deleteGeneralInformation($id);
 
         if (!$generalInformation) {
-            return $this->responseRedirectBack('Error occurred while deleting GeneralInformation.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating GeneralInformation.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.generalinformations.index', 'GeneralInformation deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.generalinformations.index', 'GeneralInformation updated successfully' ,'success',false, false);
     }
 }

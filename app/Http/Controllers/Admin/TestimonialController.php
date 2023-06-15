@@ -117,8 +117,8 @@ class TestimonialController extends BaseController
         $testimonial = $this->testimonialRepository->deleteTestimonial($id);
 
         if (!$testimonial) {
-            return $this->responseRedirectBack('Error occurred while deleting testimonial.', 'error', true, true);
+            return $this->responseRedirectBack('Error occurred while updating testimonial.', 'error', true, true);
         }
-        return $this->responseRedirect('admin.testimonial.index', 'testimonial deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('admin.testimonial.index', 'testimonial updated successfully' ,'success',false, false);
     }
 }
