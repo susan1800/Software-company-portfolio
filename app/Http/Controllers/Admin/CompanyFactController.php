@@ -55,7 +55,7 @@ class CompanyFactController extends BaseController
     {
         $this->validate($request, [
             'title'      =>  'required|max:191',
-            'cat_id'  =>'required',
+            'category_id'  =>'required',
             'number'     =>  'required|int'
         ]);
 
@@ -91,7 +91,7 @@ class CompanyFactController extends BaseController
     {
         $this->validate($request, [
             'title'      =>  'required|max:191',
-            'cat_id'  =>'required',
+            'category_id'  =>'required',
              'number'     =>  'required|int'
         ]);
 

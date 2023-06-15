@@ -25,8 +25,8 @@
 
 
                         <div class="form-group">
-                            <label for="cat_id">Category <span class="m-l-5 text-danger"> *</span></label>
-                            <select id="cat_id" class="form-control custom-select mt-15 @error('category_id') is-invalid @enderror" name="category_id">
+                            <label for="category_id">Category <span class="m-l-5 text-danger"> *</span></label>
+                            <select id="category_id" class="form-control custom-select mt-15 @error('category_id') is-invalid @enderror" name="category_id">
                                 <option value="">Select a category</option>
                                 @foreach($categories as $category)
                                 @if(($category->status==1))

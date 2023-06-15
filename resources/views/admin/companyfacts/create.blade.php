@@ -25,8 +25,8 @@
                             @error('number') {{ $message }} @enderror
                         </div>
                         <div class="form-group">
-                            <label for="cat_id">Category <span class="m-l-5 text-danger"> *</span></label>
-                            <select id=cat_id class="form-control custom-select mt-15 @error('cat_id') is-invalid @enderror" name="cat_id">
+                            <label for="category_id">Category <span class="m-l-5 text-danger"> *</span></label>
+                            <select id=category_id class="form-control custom-select mt-15 @error('category_id') is-invalid @enderror" name="category_id">
                                 <option value="0">Select a category</option>
                                 @foreach($categories as $category)
                                 @if(($category->status==1))
@@ -34,11 +34,11 @@
                                     @endif
                                     @endforeach
                             </select>
-                            @error('cat_id') {{ $message }} @enderror
+                            @error('category_id') {{ $message }} @enderror
                         </div>
 
-                        
-                    </div> 
+
+                    </div>
                     <div class="tile-footer">
                         <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Save facts</button>
                         &nbsp;&nbsp;&nbsp;

@@ -31,10 +31,10 @@
 
                         <div class="form-group">
                             <label for="parent">Category <span class="m-l-5 text-danger"> *</span></label>
-                            <select id=cat_id class="form-control custom-select mt-15 @error('cat_id') is-invalid @enderror" name="cat_id">
+                            <select id=category_id class="form-control custom-select mt-15 @error('category_id') is-invalid @enderror" name="category_id">
                                 <option value="0">category</option>
                                 @foreach($categories as $category)
-                                    @if ($targetPortfolio->cat_id == $category->id)
+                                    @if ($targetPortfolio->category_id == $category->id)
                                         <option value="{{ $category->id }}" selected> {{ $category->title }} </option>
                                     @else
                                     @if(($category->status==1))
@@ -43,19 +43,8 @@
                                     @endif
                                 @endforeach
                             </select>
-                            @error('cat_id') {{ $message }} @enderror
+                            @error('category_id') {{ $message }} @enderror
                         </div>
-
-
-
-
-                        {{-- <div class="form-group">
-                            <label class="control-label" for="bio">Details</label>
-                            <textarea class="ckeditor form-control @error('details') is-invalid @enderror " rows="4" name="details" id="details">{{ old('details', $targetPortfolio->details) }}</textarea>
-                            @error('details') {{ $message }} @enderror
-                        </div> --}}
-
-
 
                         <div class="form-group">
                             <div class="row">
@@ -75,7 +64,7 @@
                         </div>
                     </div>
                     <div class="tile-footer">
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Blog</button>
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Portfolio</button>
                         &nbsp;&nbsp;&nbsp;
                         <a class="btn btn-secondary" href="{{ route('admin.portfolio.index') }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
                     </div>

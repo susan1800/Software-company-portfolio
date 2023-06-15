@@ -67,15 +67,15 @@ class CategoryRepository extends BaseRepository implements CategoryContract
 
         try {
             $collection = collect($params);
-            $splits = explode($collection['title'],' ');
+            $splits = explode(' ', $collection['title']);
+
             $createslug ='';
 
             foreach($splits as $split){
+
                 $createslug = $createslug.$split;
             }
-            if($createslug == " "){
-                $createslug = $collection['title'];
-            }
+
 
             $find = Category::where('slug',$createslug)->first();
             if($find){
@@ -83,14 +83,8 @@ class CategoryRepository extends BaseRepository implements CategoryContract
             }else{
                 $slug = $createslug;
             }
+            // dd($slug);
             $collection['slug'] = $slug;
-
-
-
-
-
-
-
             $category = new Category($collection->all());
 
 

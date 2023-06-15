@@ -11,7 +11,6 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
                         <li class="breadcrumb-item"><a class="text-white" href="{{route('index')}}">Home</a></li>
-                        <li class="breadcrumb-item"><a class="text-white" href="{{route('index')}}">Pages</a></li>
                         <li class="breadcrumb-item"><a class="text-white" href="{{route('blog')}}">Blog</a></li>
                         <li class="breadcrumb-item text-white active" aria-current="page">Blog details</li>
                     </ol>
@@ -41,8 +40,7 @@
                     <!-- Post meta content-->
                     <div class="text-muted fst-italic mb-2">Posted on <b>{{$blog->created_at->format('jS F Y')}}</b></div>
                     <!-- Post categories-->
-                    <a class="badge bg-secondary text-decoration-none link-light" href="{{route('blogbycategory' , $blog->cat_id)}}">{{$blog->category->title}}</a>
-                    <a class="badge bg-secondary text-decoration-none link-light" href="{{route('blogbycategory' , $blog->cat_id)}}">{{$blog->category->subtitle}}</a>
+                    <a class="badge bg-secondary text-decoration-none link-light" href="{{route('blogbycategory' , $blog->category_id)}}">{{$blog->category->title}}</a>
                 </header>
                 <!-- Preview image figure-->
                 <figure class="mb-4"><img class="img-fluid rounded" src="{{asset('storage/'.$blog->image)}}" alt="..." /></figure>
@@ -71,10 +69,10 @@
                 <div class="card-header">Categories</div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <ul class="list-unstyled mb-0">
                                 @foreach($blogcategories as $blogcategory)
-                                <li><a href="{{route('blogbycategory' , $blogcategory->cat_id)}}">{{$blogcategory->category->title}} ({{$blogcategory->total}})</a></li>
+                                <li><a href="{{route('blogbycategory' , $blogcategory->category_id)}}">{{$blogcategory->category->title}} ({{$blogcategory->total}})</a></li>
                                 @endforeach
 
                             </ul>

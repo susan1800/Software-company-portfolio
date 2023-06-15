@@ -44,7 +44,7 @@ class BlogsController extends Controller
 
     public function blogByCategory($cid)
     {
-        $blogs = Blog::where('cat_id','=', $cid)->paginate(9);
+        $blogs = Blog::where('category_id','=', $cid)->paginate(9);
         if(count($blogs)<1){
             return view('frontend.404');
         }

@@ -17,7 +17,7 @@ class CreateCompanyFactsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('number');
-            $table->unsignedBigInteger('cat_id');
+            $table->unsignedBigInteger('category_id');
             $table->boolean('status')->default('1');
             $table->timestamps();
         });

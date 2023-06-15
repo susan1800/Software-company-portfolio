@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="tile-footer">
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Team</button>
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Member</button>
                         &nbsp;&nbsp;&nbsp;
                         <a class="btn btn-secondary" href="{{ route('admin.team.index') }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
                     </div>

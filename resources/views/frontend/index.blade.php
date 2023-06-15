@@ -311,17 +311,20 @@
                   <div class="col-lg-4 col-md-12 mb-4">
                     <div class="card">
                       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+                        <img src="{{asset('storage/'.$blog->image)}}" class="img-fluid" />
                         <a href="#!">
                           <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                         </a>
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title">{{$blog->title}}</h5>
-                        <div class="card-text" style="display: -webkit-box;
+                        <p class="card-text" style="display: -webkit-box;
                         -webkit-line-clamp: 2;
                         -webkit-box-orient: vertical;
-                        overflow: hidden; ">
+                        overflow: hidden; "><b>{{$blog->title}}</b></p>
+                        <div class="card-text" style="display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden; font-size:13px;">
                           {!! $blog->details !!}
                       </div>
                         <a href="{{route('blogdetails' , $blog->id)}}" class="btn btn-primary">Read More >></a>

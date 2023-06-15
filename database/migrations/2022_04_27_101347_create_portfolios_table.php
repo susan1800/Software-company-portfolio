@@ -18,7 +18,7 @@ class CreatePortfoliosTable extends Migration
             $table->string('title');
             $table->longText('details');
             $table->string('image');
-            $table->unsignedBigInteger('cat_id');
+            $table->unsignedBigInteger('category_id');
             $table->boolean('status');
             $table->timestamps();
         });

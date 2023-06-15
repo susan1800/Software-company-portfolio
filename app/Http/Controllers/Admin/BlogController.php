@@ -34,7 +34,7 @@ class BlogController extends BaseController
     {
         $blogs = $this->blogRepository->listBlog();
 
-        $this->setPageTitle('Blogs', 'List Of All Blogs.');
+        $this->setPageTitle('Blogs', 'List All Blogs.');
         return view('admin.blogs.index', compact('blogs'));
     }
 
@@ -89,7 +89,7 @@ class BlogController extends BaseController
         $users = $this->usersRepository->listUser('id', 'asc');
         $blogs = $this->blogRepository->listBlog();
 
-        $this->setPageTitle('Blog Us', 'Edit Blog : '.$targetBlog->name);
+        $this->setPageTitle('Blog', 'Edit Blog : '.$targetBlog->name);
         return view('admin.blogs.edit', compact('blogs', 'targetBlog', 'categories','users'));
     }
 

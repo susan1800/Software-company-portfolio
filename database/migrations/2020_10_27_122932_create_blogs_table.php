@@ -16,7 +16,7 @@ class CreateBlogsTable extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->unsignedBigInteger('cat_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('subtitle');
             $table->longText('details');
             $table->unsignedBigInteger('user_id');

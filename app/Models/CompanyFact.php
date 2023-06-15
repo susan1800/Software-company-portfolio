@@ -10,11 +10,11 @@ class CompanyFact extends Model
     use HasFactory;
     protected $table ='company_facts';
     protected $fillable = [
-         'title', 'number' , 'cat_id' , 'status',
+         'title', 'number' , 'category_id' , 'status',
 ];
 public function category()
 {
-    return $this->belongsTo(Category::class , 'cat_id');
+    return $this->belongsTo(Category::class , 'category_id');
 }
 
 }

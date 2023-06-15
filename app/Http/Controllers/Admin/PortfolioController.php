@@ -61,7 +61,7 @@ class PortfolioController extends BaseController
         $this->validate($request, [
             'title'      =>  'required|max:191',
             'link'      =>  'required',
-            'cat_id'      =>  'required',
+            'category_id'      =>  'required',
             'image'     =>  'mimes:jpg,jpeg,png|max:2000',
             'status'   =>   'required',
         ]);
@@ -101,7 +101,7 @@ class PortfolioController extends BaseController
         $this->validate($request, [
             'title'      =>  'required|max:191',
             'link'      =>  'required',
-            'cat_id'      =>  'required',
+            'category_id'      =>  'required',
             'image'     =>  'mimes:jpg,jpeg,png|max:2000',
 
         ]);

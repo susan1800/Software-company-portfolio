@@ -82,7 +82,7 @@ INSERT INTO `admins` (`id`, `name`, `email`, `email_verified_at`, `password`, `s
 CREATE TABLE `blogs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cat_id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
   `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `details` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `message_from_author` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE `blogs` (
 -- Dumping data for table `blogs`
 --
 
-INSERT INTO `blogs` (`id`, `title`, `cat_id`, `subtitle`, `details`, `message_from_author`, `image`, `count`, `status`, `created_at`, `updated_at`) VALUES
+INSERT INTO `blogs` (`id`, `title`, `category_id`, `subtitle`, `details`, `message_from_author`, `image`, `count`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'title', 1, 'subtitle', '<p>,zxmcnb vckMZ NXc,zshbd fjacbwLSKdj cakjszhdgxkfjad</p>', 'message', 'blog/nj9klhYdWhDJVJfvJy4OLCP98.jpg', NULL, 1, '2022-11-06 04:14:11', '2022-11-06 04:14:11'),
 (2, 'abcd', 1, 'abcd', '<p>,x bvkjsdfxgmc,v<br />xdfglkjv sebdzkcgjvn<br />xf,mvkbj senldkfxjgcmvs</p><ol><li>dfhdfg</li><li>cfghvdtgf</li><li>cfgvhdtgc</li><li>cfgvhb</li></ol><p>&nbsp;</p>', 'message', 'blog/yFHzRfpj526awyynEkzVpJelr.jpg', NULL, 1, '2022-11-07 03:41:33', '2022-11-07 04:16:29');
 
@@ -234,7 +234,7 @@ CREATE TABLE `portfolios` (
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cat_id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
   `status` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -244,7 +244,7 @@ CREATE TABLE `portfolios` (
 -- Dumping data for table `portfolios`
 --
 
-INSERT INTO `portfolios` (`id`, `title`, `link`, `image`, `cat_id`, `status`, `created_at`, `updated_at`) VALUES
+INSERT INTO `portfolios` (`id`, `title`, `link`, `image`, `category_id`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'title', 'dcfkxgj kljdfs glesfd', 'portfolio/ot5GNh06xZJgeUGV4tXGNF7ct.jpg', 1, 1, '2022-11-06 03:40:24', '2022-11-06 03:40:24');
 
 -- --------------------------------------------------------

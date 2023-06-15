@@ -25,10 +25,10 @@
 
                         <div class="form-group">
                             <label for="parent">Category <span class="m-l-5 text-danger"> *</span></label>
-                            <select id=category_id class="form-control custom-select mt-15 @error('cat_id') is-invalid @enderror" name="cat_id">
+                            <select id=category_id class="form-control custom-select mt-15 @error('category_id') is-invalid @enderror" name="category_id">
                                 <option value="">category</option>
                                 @foreach($categories as $category)
-                                    @if ($targetBlog->cat_id == $category->id)
+                                    @if ($targetBlog->category_id == $category->id)
                                         <option value="{{ $category->id }}" selected> {{ $category->title }} </option>
                                     @else
                                     @if(($category->status==1))
@@ -75,9 +75,8 @@
     </div>
 @endsection
 
-<script src="{{url('ckeditor/ckeditor.js')}}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.ckeditor').ckeditor();
-    });
+<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+
+<script>
+    CKEDITOR.replace( '.ckeditor' );
 </script>

@@ -28,10 +28,10 @@
                         </div>
                         <div class="form-group">
                             <label for="parent">Category <span class="m-l-5 text-danger"> *</span></label>
-                            <select id=cat_id class="form-control custom-select mt-15 @error('cat_id') is-invalid @enderror" name="cat_id">
+                            <select id=category_id class="form-control custom-select mt-15 @error('category_id') is-invalid @enderror" name="category_id">
                                 <option value="0">category</option>
                                 @foreach($categories as $category)
-                                    @if ($targetcompanyFact->cat_id == $category->id)
+                                    @if ($targetcompanyFact->category_id == $category->id)
                                         <option value="{{ $category->id }}" selected> {{ $category->title }} </option>
                                     @else
                                     @if(($category->status==1))
@@ -43,7 +43,7 @@
                             @error('user_id') {{ $message }} @enderror
                         </div>
 
-                       
+
                     </div>
                     <div class="tile-footer">
                         <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update facts</button>
