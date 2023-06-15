@@ -36,7 +36,7 @@
                 <!-- Post header-->
                 <header class="mb-4">
                     <!-- Post title-->
-                    <h1 class="fw-bolder mb-1">{{$blog->title}}</h1>
+                    <h5 class="fw-bolder mb-1">{{$blog->title}}</h5>
                     <!-- Post meta content-->
                     <div class="text-muted fst-italic mb-2">Posted on <b>{{$blog->created_at->format('jS F Y')}}</b></div>
                     <!-- Post categories-->
