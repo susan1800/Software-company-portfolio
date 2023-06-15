@@ -3,7 +3,7 @@
         <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5 px-lg-5">
                 <div class="row g-5">
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <h5 class="text-white mb-4">Get In Touch</h5>
                         <p><i class="fa fa-map-marker-alt me-3"></i>{{$about->location}}</p>
                         <p><i class="fa fa-phone-alt me-3"></i>{{$about->phone}}</p>
@@ -24,7 +24,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <h5 class="text-white mb-4">Popular Link</h5>
                         <a class="btn btn-link" href="{{route('about')}}">About Us</a>
                         <a class="btn btn-link" href="{{route('contact')}}">Contact Us</a>
@@ -32,7 +32,7 @@
                         <a class="btn btn-link" href="{{route('team')}}">Teams</a>
                         <a class="btn btn-link" href="{{route('project')}}">Project</a>
                     </div>
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-4">
                         <h5 class="text-white mb-4">Project Gallery</h5>
                         <div class="row g-2">
                             @foreach ($footerprojects as $footerproject)
@@ -40,29 +40,9 @@
                                 <img class="img-fluid" src="{{asset('storage/'.$footerproject->image)}}" style="height:80px !important; width:80px !important; object-fit:cover;" alt="Image">
                             </div>
                             @endforeach
-
-                            {{-- <div class="col-4">
-                                <img class="img-fluid" src="{{asset('frontend/img/portfolio-2.jpg')}}" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="{{asset('frontend/img/portfolio-3.jpg')}}" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="{{asset('frontend/img/portfolio-4.jpg')}}" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="{{asset('frontend/img/portfolio-5.jpg')}}" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="{{asset('frontend/img/portfolio-6.jpg')}}" alt="Image">
-                            </div> --}}
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <h5 class="text-white mb-4">Newsletter</h5>
-                        <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulpu</p>
 
-                    </div>
                 </div>
             </div>
             {{-- <div class="container px-lg-5">
