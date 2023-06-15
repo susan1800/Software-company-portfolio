@@ -25,11 +25,14 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($portfolios as $portfolio)
                             @if ($portfolio->id != 0)
 
                             <tr>
-                            <td>{{ $portfolio->id }}</td>
+                            <td>{{ $i }}</td>
                                 <td>{{ $portfolio->title }}</td>
                                     <td>{{ $portfolio->link }}</td>
                                     <td>{{ $portfolio->category->title }}</td>
@@ -42,6 +45,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

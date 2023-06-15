@@ -64,6 +64,7 @@ class AboutController extends BaseController
             'linkedin' => 'required',
             'github' => 'required',
             'status'  =>  'required',
+            'map'  =>  'required',
         ]);
 
         $params = $request->except('_token');
@@ -103,8 +104,7 @@ class AboutController extends BaseController
             'phone'  =>  'required',
             'email'  =>  'required',
             'location'  =>  'required',
-            'lat'  =>  'required',
-            'long'  =>  'required',
+            'map'  =>  'required',
         ]);
         if($validator->fails()){
             return $this->responseRedirectBack('Validation Error.', $validator->errors(), true, true);

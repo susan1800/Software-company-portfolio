@@ -23,10 +23,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($companyIcons as $icon)
 
                                 <tr>
-                                    <td>{{ $icon->id }}</td>
+                                    <td>{{ $i }}</td>
                                     <td>{{ $icon->title }}</td>
                                     <td><img src="{{asset('storage/'.$icon->icon) }}" height="100" width="auto"></td>
 
@@ -37,7 +40,9 @@
                                         </div>
                                     </td>
                                 </tr>
-
+                                @php
+                                $i++;
+                            @endphp
                         @endforeach
                         </tbody>
                     </table>

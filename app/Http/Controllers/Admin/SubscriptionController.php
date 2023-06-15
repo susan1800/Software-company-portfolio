@@ -29,7 +29,7 @@ class SubscriptionController extends BaseController
     {
         $subscriptions = $this->subscriptionRepository->listSubscription();
 
-        $this->setPageTitle('Subscription ', 'Subscription ');
+        $this->setPageTitle('Subscriber ', 'Subscriber ');
         return view('admin.subscriptions.index', compact('subscriptions'));
     }
 

@@ -11,7 +11,6 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center">
                         <li class="breadcrumb-item"><a class="text-white" href="{{route('index')}}">Home</a></li>
-                        <li class="breadcrumb-item"><a class="text-white" href="{{route('index')}}">Pages</a></li>
                         <li class="breadcrumb-item text-white active" aria-current="page">Blog</li>
                     </ol>
                 </nav>
@@ -41,7 +40,7 @@
                   <div class="col-lg-4 col-md-12 mb-4">
                     <div class="card">
                       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+                        <img src="{{asset('storage/'.$blog->image)}}" class="img-fluid" />
                         <a href="#!">
                           <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                         </a>

@@ -29,10 +29,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $i=1;
+                            @endphp
                         @foreach($blogs as $blog)
                             @if ($blog->id != 0)
                                 <tr>
-                                    <td>{{ $blog->id }}</td>
+                                    <td>{{ $i }}</td>
                                     <td>{{ $blog->title }}</td>
                                     <td>{!! $blog->details !!}</td>
                                     <td>{{ $blog->category->title}}</td>
@@ -47,6 +50,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php
+                                    $i++;
+                                @endphp
                             @endif
                         @endforeach
                         </tbody>

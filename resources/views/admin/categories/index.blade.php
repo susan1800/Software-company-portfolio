@@ -25,10 +25,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($categories as $category)
 
                                 <tr>
-                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $i }}</td>
                                     <td>{{ $category->title }}</td>
                                     {{-- <td>{{ $category->subtitle }}</td> --}}
                                     <td>{{ $category->cat }}</td>
@@ -44,7 +47,9 @@
                                         </div>
                                     </td>
                                 </tr>
-
+                                @php
+                                $i++;
+                            @endphp
                         @endforeach
                         </tbody>
                     </table>

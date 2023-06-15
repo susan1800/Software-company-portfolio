@@ -24,10 +24,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($services as $service)
                             @if ($service->id != 0)
                                 <tr>
-                                    <td>{{ $service->id }}</td>
+                                    <td>{{ $i }}</td>
                                     <td>{{ $service->title }}</td>
                                     <td>{{ $service->details }}</td>
                                     <td><img src="{{asset('storage/'.$service->icon)}}" width="auto" height="100" alt="{{$service->icon}}"></td>
@@ -39,6 +42,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

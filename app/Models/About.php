@@ -10,7 +10,7 @@ class About extends Model
     use HasFactory;
     protected $table ='abouts';
     protected $fillable = [
-        'title', 'subtitle', 'details', 'image' , 'facebook' , 'twitter' , 'linkedin' , 'github' , 'status' ,
+        'title', 'phone', 'map', 'details', 'image' , 'facebook' , 'twitter' , 'linkedin' , 'github' , 'email','address' ,
     ];
 
 }

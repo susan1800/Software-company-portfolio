@@ -71,18 +71,6 @@
             </a>
         </li>
         <li>
-            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.subscription.index' ? 'active' : '' }}" href="{{ route('admin.subscription.index') }}">
-                <i class="app-menu__icon fa fa-list"></i>
-                <span class="app-menu__label">subscription</span>
-            </a>
-        </li>
-        {{-- <li>
-            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.users.index' ? 'active' : '' }}" href="{{ route('admin.users.index') }}">
-                <i class="app-menu__icon fa fa-book"></i>
-                <span class="app-menu__label">user</span>
-            </a>
-        </li> --}}
-        <li>
             <a class="app-menu__item {{ Route::currentRouteName() == 'admin.companyicons.index' ? 'active' : '' }}" href="{{ route('admin.companyicons.index') }}">
                 <i class="app-menu__icon fa fa-book"></i>
                 <span class="app-menu__label">CompanyIcon</span>
@@ -106,6 +94,13 @@
                 <span class="app-menu__label">GeneralInformation</span>
             </a>
         </li> --}}
+
+        <li>
+            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.subscription.index' ? 'active' : '' }}" href="{{ route('admin.subscription.index') }}">
+                <i class="app-menu__icon fa fa-list"></i>
+                <span class="app-menu__label">subscriber</span>
+            </a>
+        </li>
 
     </ul>
 </aside>

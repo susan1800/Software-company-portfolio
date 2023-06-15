@@ -22,9 +22,6 @@
 </div>
 <!-- Navbar & Hero End -->
 
-@include('frontend.partials.searchfulpage')
-
-
 
 
  <!-- Page content-->
@@ -55,15 +52,7 @@
         <!-- Side widgets-->
         <div class="col-lg-4">
             <!-- Search widget-->
-            {{-- <div class="card mb-4">
-                <div class="card-header">Search</div>
-                <div class="card-body">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                    </div>
-                </div>
-            </div> --}}
+
             <!-- Categories widget-->
             <div class="card mb-4">
                 <div class="card-header">Categories</div>
@@ -94,12 +83,8 @@
                                 <div class="img-post" style="padding:10px; text-align:left">
                                     <a href="{{route('blogdetails' , $blog->id)}}"><img src="{{asset('storage/'.$blog->image)}}" alt="Awesome Image" height="100" width="100"></a>
                                 </div>
-                                <div class="m-b-0" style="padding:10px; padding-bottom:0px; text-align:left;"> <p> <a href="{{route('blogdetails' , $blog->id)}}" style="color:black;"><b>{{$blog->title}}</b> </a><br> <span>{{$blog->created_at->format('jS F Y')}}</span></p>
-                                    <div style="display: -webkit-box;
-                                    -webkit-line-clamp: 2;
-                                    -webkit-box-orient: vertical;
-                                    overflow: hidden; margin:0px;">{!! $blog->details !!}</div>
-                                    </div>
+                                <div class="m-b-0" style="padding-top:10px; padding-bottom:0px; text-align:left;"> <p> <a href="{{route('blogdetails' , $blog->id)}}" style="color:black;"><b>{{$blog->title}}</b> </a><br> <span>{{$blog->created_at->format('jS F Y')}}</span></p>
+
 
 
                             </div>

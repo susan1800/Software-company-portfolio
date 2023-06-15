@@ -26,10 +26,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($teams as $team)
                             @if ($team->id != 0)
                                 <tr>
-                                    <td>{{ $team->id }}</td>
+                                    <td>{{ $i }}</td>
                                     <td>{{ $team->name }}</td>
                                     <td>{{ $team->title }}</td>
                                     <td><a href="{{$team->facebook}}" style="padding:5px;"> <i class="fa fa-facebook" ></i></a> <a href="{{$team->linkedin}}" style="padding:5px;"><i class="fa fa-linkedin" ></i></a><a href="{{$team->github}}" style="padding:5px;"> <i class="fa fa-github"></i></a></td>
@@ -43,6 +46,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

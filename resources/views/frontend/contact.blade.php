@@ -29,7 +29,6 @@
         @include('frontend.partials.searchfulpage')
 
 
-        <!-- Contact Start -->
         <div class="container-xxl py-5">
             <div class="container px-lg-5">
                 <div class="row justify-content-center">
@@ -38,6 +37,38 @@
                             <h6 class="position-relative d-inline text-primary ps-4">Contact Us</h6>
                             <h2 class="mt-2">Contact For Any Query</h2>
                         </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5 justify-content-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <p class="" style="text-align: justify; font-size:18px;"> <i class="fa fa-phone" style="color:blue;"></i>&nbsp; &nbsp;&nbsp;<b>Call Us</b> {{$about->phone}}</p>
+                        <p class="" style="text-align: justify; font-size:18px;"><i class="fa fa-map-marker" style="color:blue;" ></i> &nbsp; &nbsp;&nbsp; {{$about->location}}</p>
+                        <p class="" style="text-align: justify; font-size:18px;"><i class="fa fa-envelope" style="color:blue;" ></i> &nbsp; &nbsp;&nbsp; <b>Email </b> {{$about->email}}</p>
+
+
+                        <div class="d-flex align-items-center mt-4">
+
+                            @if($about->facebook != null)
+                            <a class="btn btn-outline-primary btn-square me-3" href="{{$about->facebook}}"><i class="fab fa-facebook-f"></i></a>
+                            @endif
+                            @if($about->twitter != null)
+                            <a class="btn btn-outline-primary btn-square me-3" href="{{$about->twitter}}"><i class="fab fa-twitter"></i></a>
+                            @endif
+                            @if($about->github != null)
+                            <a class="btn btn-outline-primary btn-square me-3" href="{{$about->github}}"><i class="fab fa-github"></i></a>
+                            @endif
+                            @if($about->linkedin != null)
+                            <a class="btn btn-outline-primary btn-square" href="{{$about->linkedin}}"><i class="fab fa-linkedin-in"></i></a>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
                         <div class="wow fadeInUp" data-wow-delay="0.3s">
                             <form>
                                 <div class="row g-3">
@@ -69,26 +100,24 @@
                                 </div>
                             </form>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" onclick="sendmessage()">Send Message</button>
+                                <button id="sendbutton" class="btn btn-primary w-100 py-3" onclick="sendmessage()">Send Message</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+
+        <!-- Contact Start -->
+
         <!-- Contact End -->
 
-        <section id="google-maps">
-            <div class="google-map">
-                <div class="gmap3-area" data-lat="{{$about->lat}}" data-lng="{{$about->long}}" data-mrkr="{{asset('img/map-marker.png')}}"></div>
-            </div>
-        </section>
-        <input type="hidden" value="{{$about->lat}}" id="latitude">
-        <input type="hidden" value="{{$about->long}}" id="longitude">
-        <div style="padding:10px">
-			<div id="map"></div>
-		</div>
-        {{-- <img src="http://maps.googleapis.com/maps/api/staticmap?center=-{{$about->lat}},-{{$about->long}}&zoom=11&size=200x200&sensor=false"> --}}
+        <div class="col-lg-8" style="text-align: center; padding:auto; margin:auto;">
+           {!! $about->map !!}
+        </div>
 
 
     @include('frontend/partials.footer')
@@ -97,39 +126,6 @@
 
 </body>
 
-
-
-<script type="text/javascript">
-    var map;
-
-    function initMap() {
-
-        var latitude = document.getElementById('latitude').value;
-        var longitude = document.getElementById('longitude').value;
-
-
-        var myLatLng = {lat: latitude, lng: longitude};
-
-
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: myLatLng,
-          zoom: 14
-        });
-        // alert('dfg');
-
-
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          //title: 'Hello World'
-
-          // setting latitude & longitude as title of the marker
-          // title is shown when you hover over the marker
-          title: latitude + ', ' + longitude
-        });
-    }
-    initMap();
-    </script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&amp;ver=2.1.6"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -150,6 +146,7 @@
                     text: 'Please fill all the field !',
 
                     })
+                    return false;
         }
 
         const validateEmail = (email) => {
@@ -157,12 +154,13 @@
             /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
         };
-        document.getElementById('name').value = "";
+
+        if (validateEmail(email)) {
+            document.getElementById('name').value = "";
         document.getElementById('email').value = "";
         document.getElementById('subject').value = "";
         document.getElementById('message').value = "";
-        if (validateEmail(email)) {
-
+        document.getElementById('sendbutton').style.background ="#0d87d4";
 
             $.post('{{ route('contactmail') }}',{
                 _token: '{{ csrf_token() }}',
@@ -182,7 +180,7 @@
 
                     if (result.isConfirmed) {
 
-                    //   location.reload();
+                      location.reload();
                     }
 
                     });

@@ -18,27 +18,27 @@
                         <tr>
                             <th> # </th>
                             <th> Email </th>
-                            <th> Status </th>
 
-                            <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
+
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $i=1;
+                            @endphp
                         @foreach($subscriptions as $subscription)
                             @if ($subscription->id != 0)
 
                             <tr>
-                            <td>{{ $subscription->id }}</td>
+                            <td>{{ $i }}</td>
                                 <td>{{ $subscription->email }}</td>
-                                <td>{{ $subscription->status }}</td>
 
-                                    <td class="text-center">
-                                        <div class="btn-group" role="group" aria-label="Second group">
 
-                                            <a href="{{ route('admin.subscription.delete', $subscription->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
-                                        </div>
-                                    </td>
+
                                 </tr>
+                                @php
+                                    $i++;
+                                @endphp
                             @endif
                         @endforeach
                         </tbody>

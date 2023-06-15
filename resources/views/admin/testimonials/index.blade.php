@@ -25,10 +25,13 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                            $i=1;
+                        @endphp
                         @foreach($testimonials as $testimonial)
                             @if ($testimonial->id != 0)
                                 <tr>
-                                    <td>{{ $testimonial->id }}</td>
+                                    <td>{{ $i }}</td>
                                     <td>{{ $testimonial->name }}</td>
                                     <td>{{ $testimonial->title }}</td>
                                     <td>{{ $testimonial->details }}</td>
@@ -41,6 +44,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @php
+                                $i++;
+                            @endphp
                             @endif
                         @endforeach
                         </tbody>

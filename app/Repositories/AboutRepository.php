@@ -117,7 +117,11 @@ class AboutRepository extends BaseRepository implements AboutContract
             $collection['image'] =$about->image;
         }
         $about['title']=$collection['title'];
+        $about['phone'] = $collection['phone'];
         $about['details']=$collection['details'];
+        $about['email']=$collection['email'];
+        $about['location']=$collection['location'];
+        $about['map'] = $collection['map'];
         $about['facebook']=$collection['facebook'];
         $about['linkedin']=$collection['linkedin'];
         $about['twitter']=$collection['twitter'];
