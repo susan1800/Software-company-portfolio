@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -117,7 +111,11 @@ class HomeRepository extends BaseRepository implements HomeContract
     {
         $home = $this->findHomeById($id);
 
-        $home['status'] = '0';
+        if($home->status == '0'){
+            $home['status']='1';
+        }else{
+            $home['status']='0';
+        }
 
         $home->save();
 

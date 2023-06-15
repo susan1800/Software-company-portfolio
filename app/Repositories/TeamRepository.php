@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -123,7 +117,11 @@ class TeamRepository extends BaseRepository implements TeamContract
     {
         $team = $this->findTeamById($id);
 
-        $team['status'] = '0';
+        if($team->status == '0'){
+            $team['status']='1';
+        }else{
+            $team['status']='0';
+        }
 
         $team->save();
 

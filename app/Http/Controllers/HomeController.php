@@ -23,7 +23,7 @@ class HomeController extends Controller
     public  function index(){
         $services = Service::where('status','=' ,'1')->get();
         $setting = Setting::first();
-        $categories = Category::where('status','=' ,'1')->get();
+        $categories = Category::where('cat','project')->where('status','=' ,'1')->get();
         $blogs = Blog::where('status','=' ,'1')->get();
         $portfolios = Portfolio::where('status','=' ,'1')->latest()->limit(10)->get();
         $teams = Team::where('status','=' ,'1')->get();

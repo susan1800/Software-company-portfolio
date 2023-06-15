@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -37,7 +31,7 @@ class SubscriptionRepository extends BaseRepository implements SubscriptionContr
      * @param Subscription $model
      */
     public function __construct(Subscription $model)
-    { 
+    {
         parent::__construct($model);
         $this->model = $model;
     }
@@ -105,7 +99,11 @@ class SubscriptionRepository extends BaseRepository implements SubscriptionContr
     {
         $subscription = $this->findSubscriptionById($id);
 
-        $subscription['status'] = '0';
+        if($subscription->status == '0'){
+            $subscription['status']='1';
+        }else{
+            $subscription['status']='0';
+        }
 
         $subscription->save();
 

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -104,11 +98,15 @@ class CommentRepository extends BaseRepository implements CommentContract
      */
     public function deleteComment($id)
     {
-        $Comment = $this->findCommentById($id);
+        $comment = $this->findCommentById($id);
 
-        $Comment['status']='0';
-        $Comment->save();
+        if($comment->status == '0'){
+            $comment['status']='1';
+        }else{
+            $comment['status']='0';
+        }
+        $comment->save();
 
-        return $Comment;
+        return $comment;
     }
 }

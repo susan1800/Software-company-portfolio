@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -16,7 +10,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Doctrine\Instantiator\Exception\InvalidArgumentException;
 
-/** 
+/**
  * Class GeneralInformationRepository
  *
  * @package \App\Repositories
@@ -37,7 +31,7 @@ class GeneralInformationRepository extends BaseRepository implements GeneralInfo
      * @param GeneralInformation $model
      */
     public function __construct(GeneralInformation $model)
-    { 
+    {
         parent::__construct($model);
         $this->model = $model;
     }
@@ -98,7 +92,7 @@ class GeneralInformationRepository extends BaseRepository implements GeneralInfo
 
 
         $collection = collect($params)->except('_token');
-        
+
         if ($collection->has('image') && ($params['image'] instanceof  UploadedFile)) {
 
             if ($GeneralInformation->image != null) {
@@ -107,7 +101,7 @@ class GeneralInformationRepository extends BaseRepository implements GeneralInfo
 
             $image = $this->uploadOne($params['image'], 'GeneralInformation');
             $collection['image'] = $image;
-        } 
+        }
         $collection['admins_id'] = auth()->id();
 
 
@@ -124,7 +118,11 @@ class GeneralInformationRepository extends BaseRepository implements GeneralInfo
     {
         $GeneralInformation = $this->findGeneralInformationById($id);
 
-        $GeneralInformation['status'] = '0';
+        if($GeneralInformation->status == '0'){
+            $GeneralInformation['status']='1';
+        }else{
+            $GeneralInformation['status']='0';
+        }
 
         $GeneralInformation->save();
 

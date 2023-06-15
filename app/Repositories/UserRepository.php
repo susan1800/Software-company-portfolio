@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -72,7 +66,7 @@ class UserRepository extends BaseRepository implements UserContract
             throw new ModelNotFoundException($e);
         }
     }
- 
+
     /**
      * @param array $params
      * @return mixed
@@ -107,7 +101,7 @@ class UserRepository extends BaseRepository implements UserContract
     public function updateUser(array $params)
     {
         $User = $this->findUserById($params['id']);
-        
+
         $collection = collect($params)->except('_token');
         if($params['newpassword']!= null){
             $collection['password']=Hash::make($params['newpassword']);

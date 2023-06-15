@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -154,7 +148,11 @@ class CategoryRepository extends BaseRepository implements CategoryContract
 
         $category = $this->findCategoryById($id);
 
-        $category['status'] = '0';
+        if($category->status == '0'){
+            $category['status']='1';
+        }else{
+            $category['status']='0';
+        }
 
         $category->save();
 

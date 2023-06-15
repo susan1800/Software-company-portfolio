@@ -7,6 +7,7 @@ use App\Contracts\CategoryContract;
 use App\Contracts\UserContract;
 use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class BlogController extends BaseController
 {
@@ -43,7 +44,8 @@ class BlogController extends BaseController
     public function create()
     {
         $blogs = $this->blogRepository->listBlog('id', 'asc');
-        $categories = $this->categoriesRepository->listCategories('id', 'asc');
+        // $categories = $this->categoriesRepository->listCategories('id', 'asc');
+        $categories = Category::where('cat','blog')->where('status',1)->get();
         $users = $this->usersRepository->listUser('id', 'asc');
 
         $this->setPageTitle('Blogs', 'Create Blog');
@@ -61,12 +63,9 @@ class BlogController extends BaseController
         $this->validate($request, [
             'title'      =>  'required|max:191',
             'details'      =>  'required',
-            'cat_id'      =>  'required',
-            'subtitle' =>  'required|max:191',
+            'category_id'      =>  'required',
             'image'     =>  'mimes:jpg,jpeg,png|max:2000',
 
-            'message_from_author' => 'required',
-            'status'   =>   'required',
         ]);
 
         $params = $request->except('_token');
@@ -86,7 +85,7 @@ class BlogController extends BaseController
     public function edit($id)
     {
         $targetBlog = $this->blogRepository->findBlogById($id);
-        $categories = $this->categoriesRepository->listCategories('id', 'asc');
+        $categories = Category::where('cat','blog')->where('status',1)->get();
         $users = $this->usersRepository->listUser('id', 'asc');
         $blogs = $this->blogRepository->listBlog();
 
@@ -104,8 +103,7 @@ class BlogController extends BaseController
         $this->validate($request, [
             'title'      =>  'required|max:191',
             'details'      =>  'required',
-            'cat_id'      =>  'required',
-            'subtitle' =>  'required|max:191',
+            'category_id'      =>  'required',
             'image'     =>  'mimes:jpg,jpeg,png|max:2000',
 
         ]);

@@ -11,12 +11,12 @@ class Blog extends Model
     use HasFactory;
     protected $table ='blogs';
     protected $fillable = [
-        'title' , 'subtitle', 'image' , 'details' , 'user_id' , 'cat_id' , 'message_from_author' , 'status' , 'count' ,
+        'title' , 'image' , 'details' , 'category_id' , 'status' , 'count' ,
 ];
 
 public function category()
 {
-    return $this->belongsTo(Category::class , 'cat_id');
+    return $this->belongsTo(Category::class , 'category_id');
 }
 public function user()
 {

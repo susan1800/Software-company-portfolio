@@ -38,7 +38,7 @@ class PortfolioController extends Controller
         $portfolios = Portfolio::where('status','=' ,'1')->get();
         $footerprojects = Portfolio::where('status','=' ,'1')->latest()->limit(6)->get();
         $about = About::where('status','=' ,'1')->first();
-        $categories =  Category::where('status','=' , '1')->get();
+        $categories =  Category::where('cat','project')->where('status','=' , '1')->get();
 
         return view('frontend.project', compact('portfolios', 'setting' , 'about' ,  'categories' , 'footerprojects'));
     }

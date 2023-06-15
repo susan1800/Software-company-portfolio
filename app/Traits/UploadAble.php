@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/23/2020
- * Time: 10:18 AM
- */
+
 namespace App\Traits;
 
 use Illuminate\Http\UploadedFile;

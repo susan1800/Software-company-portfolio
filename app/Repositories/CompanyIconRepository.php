@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -123,7 +117,11 @@ class CompanyIconRepository extends BaseRepository implements CompanyIconContrac
     {
         $CompanyIcon = $this->findCompanyIconById($id);
 
-        $CompanyIcon['status']='0';
+        if($CompanyIcon->status == '0'){
+            $CompanyIcon['status']='1';
+        }else{
+            $CompanyIcon['status']='0';
+        }
         $CompanyIcon->save();
 
         return $CompanyIcon;

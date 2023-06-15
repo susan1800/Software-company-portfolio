@@ -22,19 +22,11 @@
                             @error('title') {{ $message }} @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label class="control-label" for="subtitle">subtitle <span class="m-l-5 text-danger"> *</span></label>
-                            <input class="form-control @error('subtitle') is-invalid @enderror" type="text" name="subtitle" id="subtitle" value="{{ old('subtitle', $targetBlog->subtitle) }}"/>
-                            @error('subtitle') {{ $message }} @enderror
-                        </div>
-
-
-
 
                         <div class="form-group">
                             <label for="parent">Category <span class="m-l-5 text-danger"> *</span></label>
-                            <select id=cat_id class="form-control custom-select mt-15 @error('cat_id') is-invalid @enderror" name="cat_id">
-                                <option value="0">category</option>
+                            <select id=category_id class="form-control custom-select mt-15 @error('cat_id') is-invalid @enderror" name="cat_id">
+                                <option value="">category</option>
                                 @foreach($categories as $category)
                                     @if ($targetBlog->cat_id == $category->id)
                                         <option value="{{ $category->id }}" selected> {{ $category->title }} </option>
@@ -45,36 +37,14 @@
                                     @endif
                                 @endforeach
                             </select>
-                            @error('user_id') {{ $message }} @enderror
+                            @error('category_id') {{ $message }} @enderror
                         </div>
-
-
-
-
-                        {{-- <div class="form-group">
-                            <label class="control-label" for="details">Details</label>
-                            <textarea class="form-control @error('details') is-invalid @enderror" rows="4" name="details" id="details">{{ old('details', $targetBlog->details) }}</textarea>
-                            @error('details') {{ $message }} @enderror
-                        </div> --}}
 
 
                         <div class="form-group">
                             <label class="control-label" for="bio">Details</label>
                             <textarea class="ckeditor form-control @error('details') is-invalid @enderror " rows="4" name="details" id="details">{{ old('details', $targetBlog->details) }}</textarea>
                             @error('details') {{ $message }} @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label" for="count">count <span class="m-l-5 text-danger"> </span></label>
-                            <input class="form-control @error('count') is-invalid @enderror" type="text" name="count" id="count" value="{{ old('count', $targetBlog->count) }}"/>
-                            @error('count') {{ $message }} @enderror
-                        </div>
-
-
-                        <div class="form-group">
-                            <label class="control-label" for="message_from_author">message_from_author <span class="m-l-5 text-danger"> *</span></label>
-                            <input class="form-control @error('message_from_author') is-invalid @enderror" type="text" name="message_from_author" id="message_from_author" value="{{ old('message_from_author', $targetBlog->message_from_author) }}"/>
-                            @error('message_from_author') {{ $message }} @enderror
                         </div>
 
                         <div class="form-group">

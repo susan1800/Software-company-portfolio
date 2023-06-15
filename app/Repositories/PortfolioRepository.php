@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -130,7 +124,11 @@ class PortfolioRepository extends BaseRepository implements PortfolioContract
     {
         $portfolio = $this->findPortfolioById($id);
 
-        $portfolio['status']='0';
+        if($portfolio->status == '0'){
+            $portfolio['status']='1';
+        }else{
+            $portfolio['status']='0';
+        }
         $portfolio->save();
 
         return $portfolio;

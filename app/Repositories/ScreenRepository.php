@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
-
 namespace App\Repositories;
 
 use App\Models\Screen;
@@ -16,7 +9,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Doctrine\Instantiator\Exception\InvalidArgumentException;
 
-/** 
+/**
  * Class ScreenRepository
  *
  * @package \App\Repositories
@@ -37,7 +30,7 @@ class ScreenRepository extends BaseRepository implements ScreenContract
      * @param Screen $model
      */
     public function __construct(Screen $model)
-    { 
+    {
         parent::__construct($model);
         $this->model = $model;
     }
@@ -98,7 +91,7 @@ class ScreenRepository extends BaseRepository implements ScreenContract
 
 
         $collection = collect($params)->except('_token');
-        
+
         if ($collection->has('image') && ($params['image'] instanceof  UploadedFile)) {
 
             if ($Screen->image != null) {
@@ -107,7 +100,7 @@ class ScreenRepository extends BaseRepository implements ScreenContract
 
             $image = $this->uploadOne($params['image'], 'screen');
             $collection['image'] = $image;
-        } 
+        }
         $collection['admins_id'] = auth()->id();
 
 
@@ -124,7 +117,11 @@ class ScreenRepository extends BaseRepository implements ScreenContract
     {
         $Screen = $this->findScreenById($id);
 
-        $Screen['status'] = '0';
+        if($Screen->status == '0'){
+            $Screen['status']='1';
+        }else{
+            $Screen['status']='0';
+        }
 
         $Screen->save();
 

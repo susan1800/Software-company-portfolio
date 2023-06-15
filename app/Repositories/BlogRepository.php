@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -47,7 +41,7 @@ class BlogRepository extends BaseRepository implements BlogContract
     public function listBlog(string $order = 'id', string $sort = 'desc', array $columns = ['*'])
     {
         return $this->all($columns, $order, $sort);
-        
+
 
     }
 
@@ -126,7 +120,12 @@ class BlogRepository extends BaseRepository implements BlogContract
     public function deleteBlog($id)
     {
         $blog = $this->findBlogById($id);
-        $blog['status']='0';
+        if($blog->status == '0'){
+            $blog['status']='1';
+        }else{
+            $blog['status']='0';
+        }
+
         $blog->save();
 
         return $blog;

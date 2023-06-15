@@ -21,24 +21,20 @@
                             <input class="form-control " type="hidden" name="status" id="status" value="1"/>
                             @error('title') {{ $message }} @enderror
                         </div>
-                        <div class="form-group">
-                            <label class="control-label" for="subtitle">subtitle <span class="m-l-5 text-danger"> *</span></label>
-                            <input class="form-control @error('subtitle') is-invalid @enderror" type="text" name="subtitle" id="subtitle" value="{{ old('subtitle') }}"/>
-                            @error('subtitle') {{ $message }} @enderror
-                        </div>
+
 
 
                         <div class="form-group">
                             <label for="cat_id">Category <span class="m-l-5 text-danger"> *</span></label>
-                            <select id=cat_id class="form-control custom-select mt-15 @error('cat_id') is-invalid @enderror" name="cat_id">
-                                <option value="0">Select a category</option>
+                            <select id="cat_id" class="form-control custom-select mt-15 @error('category_id') is-invalid @enderror" name="category_id">
+                                <option value="">Select a category</option>
                                 @foreach($categories as $category)
                                 @if(($category->status==1))
                                     <option value="{{ $category->id }}"> {{ $category->title }} </option>
                                     @endif
                                     @endforeach
                             </select>
-                            @error('cat_id') {{ $message }} @enderror
+                            @error('category_id') {{ $message }} @enderror
                         </div>
 
 
@@ -48,11 +44,7 @@
                             @error('details') {{ $message }} @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label class="control-label" for="message_from_author">message_from_author <span class="m-l-5 text-danger"> *</span></label>
-                            <input class="form-control  @error('message_from_author') is-invalid @enderror" type="text" name="message_from_author" id="message_from_author" value="{{ old('message_from_author') }}"/>
-                            @error('message_from_author') {{ $message }} @enderror
-                        </div>
+
 
                         <div class="form-group">
                             <label class="control-label">Image</label>
@@ -73,9 +65,9 @@
 
 @endsection
 
-<script src="{{url('ckeditor/ckeditor.js')}}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.ckeditor').ckeditor();
-    });
+{{-- <script src="{{url('ckeditor/ckeditor.js')}}"></script> --}}
+<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+
+<script>
+    CKEDITOR.replace( '.ckeditor' );
 </script>

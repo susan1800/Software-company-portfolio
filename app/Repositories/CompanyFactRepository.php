@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -106,7 +100,11 @@ class CompanyFactRepository extends BaseRepository implements CompanyFactContrac
     {
         $CompanyFact = $this->findCompanyFactById($id);
 
-        $CompanyFact['status']='0';
+        if($CompanyFact->status == '0'){
+            $CompanyFact['status']='1';
+        }else{
+            $CompanyFact['status']='0';
+        }
         $CompanyFact->save();
 
         return $CompanyFact;

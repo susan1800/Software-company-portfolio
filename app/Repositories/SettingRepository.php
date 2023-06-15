@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -132,7 +126,11 @@ class SettingRepository extends BaseRepository implements SettingContract
     {
         $Setting = $this->findSettingById($id);
 
-        $Setting['status'] = '0';
+        if($Setting->status == '0'){
+            $Setting['status']='1';
+        }else{
+            $Setting['status']='0';
+        }
 
         $Setting->save();
 

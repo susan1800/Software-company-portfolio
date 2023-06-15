@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -122,12 +116,16 @@ class ServiceRepository extends BaseRepository implements ServiceContract
      */
     public function deleteService($id)
     {
-        
 
-        
+
+
         $service = $this->findServiceById($id);
 
-        $service['status'] = '0';
+        if($service->status == '0'){
+            $service['status']='1';
+        }else{
+            $service['status']='0';
+        }
 
         $service->save();
 

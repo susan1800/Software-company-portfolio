@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -141,8 +135,13 @@ class AboutRepository extends BaseRepository implements AboutContract
     public function deleteAbout($id)
     {
         $about = $this->findAboutById($id);
+        if($about->status == '0'){
+            $about['status']='1';
+        }else{
+            $about['status']='0';
+        }
 
-        $about['status']='0';
+
         $about->save();
 
         return $about;

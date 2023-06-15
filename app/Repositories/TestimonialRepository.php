@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -123,7 +117,11 @@ class TestimonialRepository extends BaseRepository implements TestimonialContrac
     {
         $testimonial = $this->findtestimonialById($id);
 
-        $testimonial['status'] = '0';
+        if($testimonial->status == '0'){
+            $testimonial['status']='1';
+        }else{
+            $testimonial['status']='0';
+        }
 
         $testimonial->save();
 

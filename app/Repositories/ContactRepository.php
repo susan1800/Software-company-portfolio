@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bishal
- * Date: 8/27/2020
- * Time: 1:52 PM
- */
 
 namespace App\Repositories;
 
@@ -23,7 +17,7 @@ use Doctrine\Instantiator\Exception\InvalidArgumentException;
  */
 class ContactRepository extends BaseRepository implements ContactContract
 {
- 
+
 
     /**
      * @param string $order
@@ -99,7 +93,7 @@ class ContactRepository extends BaseRepository implements ContactContract
         $contact = $this->findContactById($params['id']);
 
         $collection = collect($params)->except('_token');
-        
+
         if ($collection->has('image') && ($params['image'] instanceof  UploadedFile)) {
 
             if ($contact->image != null) {
@@ -132,7 +126,11 @@ class ContactRepository extends BaseRepository implements ContactContract
     {
         $contact = $this->findContactById($id);
 
-        $contact['status']='0';
+        if($contact->status == '0'){
+            $contact['status']='1';
+        }else{
+            $contact['status']='0';
+        }
         $contact->save();
 
         return $contact;

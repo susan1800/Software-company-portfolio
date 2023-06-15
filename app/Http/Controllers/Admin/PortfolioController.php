@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Contracts\PortfolioContract;
 use App\Contracts\CategoryContract;
 use App\Contracts\UserContract;
+use App\Models\Category;
 use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
 
@@ -43,7 +44,8 @@ class PortfolioController extends BaseController
     public function create()
     {
         $portfolios = $this->portfolioRepository->listPortfolio('id', 'asc');
-        $categories = $this->categoriesRepository->listCategories('id', 'asc');
+        $categories = Category::where('cat','project')->where('status',1)->get();
+        // $categories = $this->categoriesRepository->listCategories('id', 'asc');
 
         $this->setPageTitle('Portfolios', 'Create Portfolio');
         return view('admin.portfolios.create', compact('portfolios', 'categories'));
@@ -81,7 +83,8 @@ class PortfolioController extends BaseController
     public function edit($id)
     {
         $targetPortfolio = $this->portfolioRepository->findPortfolioById($id);
-        $categories = $this->categoriesRepository->listCategories('id', 'asc');
+        // $categories = $this->categoriesRepository->listCategories('id', 'asc');
+        $categories = Category::where('cat','project')->where('status',1)->get();
         $portfolios = $this->portfolioRepository->listPortfolio();
 
         $this->setPageTitle('Portfolios', 'Edit Portfolio : '.$targetPortfolio->name);
