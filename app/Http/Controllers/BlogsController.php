@@ -67,11 +67,11 @@ class BlogsController extends Controller
         $footerprojects = Portfolio::where('status','=' ,'1')->latest()->limit(6)->get();
         $blogs = Blog::where('status','=' , '1')->latest()->limit('5')->get();
         $about = About::where('status','=' ,'1')->first();
-        $blogcategories = Blog::where('status','=' , '1')->groupBy('cat_id')
-        ->selectRaw('count(*) as total, cat_id')
+        $blogcategories = Blog::where('status','=' , '1')->groupBy('category_id')
+        ->selectRaw('count(*) as total, category_id')
         ->get();
         // dd($blogcategories->category);
-        // $blogcategories = Blog::where('status','=' , '1')->groupBy('blogs.cat_id')->get();
+        // $blogcategories = Blog::where('status','=' , '1')->groupBy('blogs.category_id')->get();
         return view('frontend.blogdetails', compact('blogs','setting','blog', 'about' ,'blogcategories' , 'footerprojects'));
     }
 
